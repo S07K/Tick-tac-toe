@@ -50,8 +50,10 @@ function declare(arr) {
         winner.innerHTML = arr[0] + ' is the winner!!'
         return true;
     }else {
-        winner.innerHTML =  'Last played:' + arr[arr.length-1] +  '<br>Game in process...'
-        return false;
+        if(arr[arr.length-1] == 'O'){
+            winner.innerHTML =  'Turn: X <br>Game in process...'
+        }else winner.innerHTML =  'Turn: O <br>Game in process...'
+        return false; 
     }
 }
 
@@ -69,7 +71,12 @@ function counter() {
     }
 }
 
-addEvent = () => {
+function swipe() {
+    var arrays = T + L
+    console.log(arrays)
+}
+
+const addEvent = () => {
     var divs = document.querySelectorAll('.container div');
     for (let i = 0; i < divs.length; i++) {
         const element = divs[i];
@@ -127,3 +134,4 @@ addEvent = () => {
 }
 
 addEvent();
+
